@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pidima Chat (vanilla)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <button class="chat-launcher" aria-label="Open chat">💬</button>
+
+  <section class="chat" role="dialog" aria-modal="true" aria-hidden="true">
+    <header class="chat__header">
+      <h2 id="chat__title">Pidima Assistant</h2>
+      <div class="chat__actions">
+        <button id="themeToggle" aria-label="Toggle theme">🌓</button>
+        <button id="closeChat" aria-label="Close chat">✕</button>
+      </div>
+    </header>
+
+    <main id="log" class="chat__messages" role="log" aria-live="polite"></main>
+
+    <div id="typing" class="chat__typing" aria-live="polite" hidden>
+      <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      <span class="muted">Assistant is typing…</span>
+    </div>
+
+    <form id="composer" class="chat__composer">
+      <input type="file" id="attach" hidden />
+      <button type="button" id="attachBtn" aria-label="Attach file">📎</button>
+      <textarea id="input" rows="1" placeholder="Type a message…" aria-label="Message"></textarea>
+      <button type="submit" id="sendBtn" aria-label="Send">➤</button>
+    </form>
+  </section>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
